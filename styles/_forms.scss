@@ -1,0 +1,45 @@
+fieldset {
+    border: none;
+   
+}
+input[type=text],
+input[type=email] {
+    width: calc((100% - 30px) / 2);
+    padding:10px;
+    float:left;
+    border:none;
+    border-bottom: 2px solid $secondary;
+    background-color:$primaryBackground;
+}
+input[type=text] {
+    margin-right:30px;
+}
+
+input[type=email] {
+    margin-right:0;
+}
+
+textarea {
+    width:100%;
+    padding:10px;
+    resize: none;
+    border: 2px solid $secondary;
+    margin:10px 0;
+    background-color:$primaryBackground;
+}
+
+input[type=submit] {
+    border:none;
+    padding:5px;   
+    width:100%;
+    background-color:$secondary;
+
+}
+
+input[type=text]::placeholder,
+input[type=email]::placeholder,
+input[type=submit]::placeholder,
+textarea::placeholder {
+    color:black;
+    opacity: 1;
+}
