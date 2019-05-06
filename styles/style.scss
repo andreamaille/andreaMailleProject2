@@ -3,7 +3,7 @@
 @import "forms";
 @import "typography";
 @import "blog";
-
+@import "contact";
 
 // General 
 
@@ -11,9 +11,7 @@
     width:80%;
     max-width:1440px;
     margin: 0 auto;
-    // background-color: rgba(243, 225, 237, 0.685);
 }
-
 
 img {
     max-width: 100%;
@@ -74,129 +72,143 @@ nav li:last-child{
     margin-right: 0;
 }
 
-// HOME PAGE
-
-.homeHeader {
-    background:url(../assets/header-image.jpg) top center/contain no-repeat $primaryBackground;
-    width:100%;
-    height:100vh;
-}
-
-.headerMainContent {
+.mainHeader {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-end;
 }
+// HOME PAGE
+
+.headerHome {
+    background:url(../assets/header-image.jpg) top center/cover no-repeat $primaryBackground;
+    width:100%;
+    height:100vh;
+}
+
+.mainHeaderHome {
+     height:80vh;
+}
+
 
 .companyName {
     width:100%;
-    margin-top:40%;
     z-index:20;
 }
 
-.headerImage {
-    background:url(../assets/header-box-image.jpg) bottom right/cover no-repeat;
+.headerBoxImage {
+    background:url(../assets/header-box-image.jpg) top center/cover no-repeat $white;
     border: 40px solid $dropShadow;
     border-right: 0;
-    width:640px;
+    width:40%;
     height: 620px;
-    z-index:10;
     position: absolute;
     top:28%;
     right:0;
+    z-index:10;
 }
 
 // Section - About 
 
 .about {
-    padding:150px 0;
-}
-
-.about {
     background-color: $primaryBackground;
     text-align: center;
+    padding:100px 0;
+        h2 {
+            margin:25px;
+        }
         p {
             text-align: left;
+            margin:0 50px;
         }
 }
 
-
 // Articles 
+
 .articlePreview {
     display: flex;
     justify-content: space-between;
         .articleImage {
             width:60%;
+            position: relative;
         }
         .articleInfo {
+            display: flex;
+            flex-direction: column;
             width:46%;
             padding:60px 0;
-
         }
 }
 
 .article2{
     flex-direction: row-reverse;
-}
-
-.article2 .articleInfo h3 {
-    text-align: right;
+        .articleInfo h3 {
+            text-align: right;
+        }       
+        .articleInfo a {
+        align-self: flex-end;
+        } 
 }
 
 .articleImage1 {
     background:url(../assets/left-image.jpg) center/cover no-repeat;
-    position: relative;
     top:-30px;
     left:-12.5%;
-
 }
 
 .articleImage2 {
     background:url(../assets/right-image.jpg) center/cover no-repeat;
-    position: relative;
     bottom:-30px;
     right:-12.5%;
 }
 
-
 // Section - Captured Links
-// ! The circles are not all the same shape because they are different sizes - Also need to adjust the margins
 
-
-.capturedLinks {
+.sectionLinks {
     background-color: $primaryBackground;
     padding:100px 0;
 }
 
-.capturedLinksContainer {
+.capturedLinkList {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-        .capturedLinksInfo {
-            width: 50%;
-            display: flex;
+    justify-content: space-between;
+        li {
+            width: 49%;
+            margin:2% 0;
         }
-            .linkIcon {
-                width:20%;
-            }
-
-            .linkDescriptio {
-                width:80%;
-            }
 }
 
-.capturedLinks i {
-    color: $black;
-    padding:10px;
-    background-color: $secondary;
-    border-radius: 50%;
+.linkOptions {
+    display: flex;
+        .linkIcon {
+            width:10%;
+        }
+        .linkDescription {
+            width:90%;
+        }
 }
 
+.linkIcon {
+    margin:12px 0;
+    i {
+        display: block;
+        border: 2px solid $secondary;
+        color: $black;
+        font-size: 1.2rem;
+        line-height: 1.4;
+        text-align: center;
+        width:40px;
+        height:40px;
+        background-color: $secondary;
+        border-radius: 50%; 
+    }   
+}
 
-// Full width image
+// Background Image (Map)
 
-.monthlyProfileBackgroundImage {
+.BackgroundImageMap {
     width:100%;
     height:400px;
     background:url(../assets/banner.jpg) center/cover no-repeat #201e21;
@@ -204,24 +216,28 @@ nav li:last-child{
 
 
 // Section - Monthly Profile 
-// ! Alignment of the boxes is off
 
-.monthlyProfile {
-    padding: 50px 0;
+
+.sectionProfile {
+    padding: 70px 0;
     background-color: $primaryBackground;
 }
 
-.monthlyProfileContent {
+.monthlyProfile {
     display: flex;
     flex-direction: row;
+    flex: 1 0 auto;
         .monthlyProfileImage {
-            width:30%;
-            height:350px;
+            width:25%;
+            height:300px;
              background:url(../assets/small-box.jpg) center/cover no-repeat #201e21;
         }
         .monthlyProfileInfo {
-            width: calc(70% - 60px);
+            width: calc(75% - 60px);
             margin-left:60px;
+                h2 {
+                    margin:0 0 30px 0;
+                }
         }
 }
 
@@ -233,6 +249,7 @@ nav li:last-child{
 
 .galleryImages {
     display: flex;
+    flex: 1 0 auto;
         img {
             margin-right:25px;
         }
@@ -250,4 +267,10 @@ footer {
 footer p {
     color:$white;
     text-align: center;
+}
+
+.pageFooter {
+    width:100%;
+    height:30px;
+    background-color:$black;
 }

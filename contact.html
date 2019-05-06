@@ -11,66 +11,80 @@
 </head>
 <body>
     <header class="contactHeader">
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-        <h1 class="pageTitle">Get in Touch</h1>
-    </header>
-    <main>
-        <form action="contact.php" method="POST" autocomplete="on" name="contact" class="contactForm dropShadowLeft">
-            <fieldset>
-                    
-                <label for="name" class="visuallyHidden">Name</label>
-                <input type="text" id="name" name="name" placeholder="Name" required>
-                    
-                <label for="email" class="visuallyHidden">Email Address</label>
-                <input type="email" id="email" name="email" placeholder="Email address" required>
-                    
-                <textarea name="comment" cols="30" rows="10" placeholder="Message"></textarea>
-                    
-                <label for="submit" class="visuallyHidden">Post Comment</label>
-                <input type="submit" class="postComment" value="Subscribe">
-            </fieldset>
-        </form>
-        <div class="additionalContactInfo">
-            <div class="socialIcons">
+        <div class="wrapper headerMainContent">
+            <nav>
                 <ul>
-                    <li>
-                        <a href="#" aria-label="Go to facebook">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" aria-label="Go to Instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" aria-label="Go to Twitter">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" aria-label="I don't know">
-                            <i class="far fa-comment"></i>
-                            <!-- !This is not the correct icon -->
-                        </a>
-                    </li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="contactMainSection">
+        <div class="wrapper contactInformation">
+            <div class="contactForm">
+                <h1 class="pageTitle">Get in Touch</h1>
+                <form action="contact.php" method="POST" autocomplete="on" name="contact" class="formMessages dropShadowLeft">
+                    <fieldset> 
+                        <label for="name" class="visuallyHidden">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Name" required>
+                            
+                        <label for="email" class="visuallyHidden">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="Email address" required>
+                            
+                        <textarea name="comment" cols="30" rows="10" placeholder="Message"></textarea>
+                            
+                        <label for="submit" class="visuallyHidden">Post Comment</label>
+                        <input type="submit" class="postComment" value="submit" placeholder="submit">
+                    </fieldset>
+                </form>
             </div>
-            <p class="contactEmail">info@email.com</p>
-            <div class="location">
-                <p>123 - 456 - 7890</p>
-                <p>123 Queen Street West, Unit 10</p>
-                <p>Toronto, Ontario</p>
-                <p>M5V 2D5</p>
+            <div class="additionalContactInfo">
+                <div class="socialIcons">
+                    <ul>
+                        <li>
+                            <a href="#" aria-label="Go to facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" aria-label="Go to Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" aria-label="Go to Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" aria-label="I don't know">
+                                <i class="far fa-comment"></i>
+                                <!-- !This is not the correct icon -->
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+    
+    
+                <p class="contactEmail">info@email.com</p>
+                <div class="location">
+                    <p>123 - 456 - 7890</p>
+                    <p>123 Queen Street West, Unit 10</p>
+                    <p>Toronto, Ontario</p>
+                    <p>M5V 2D5</p>
+                </div>
+    
+    
             </div>
         </div>
     </main>
+
+    <footer class="pageFooter">
+    </footer>
+    
 </body>
 </html>

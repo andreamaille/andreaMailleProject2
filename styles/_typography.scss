@@ -32,7 +32,14 @@ p {
 
 .pageTitle {
     @include mainFont (80);
+    width:100%;
     line-height: 92px;
+    text-align: center;
+}
+
+h1 {
+    margin:0; 
+    padding:0;
 }
 
 h2,
@@ -42,11 +49,13 @@ h3 {
 
 h2 {
     @include mainFont (42);
+    margin:0;
+    padding:0;
 }
 
 h3 {
     @include mainFont (32);
-    margin:0; 
+    margin:12px 0; 
     padding:0;
 }
 
@@ -68,9 +77,9 @@ nav {
     letter-spacing: 1px;
 }
 
-.pageTitle {
-    text-align: center;
-    margin:5% auto;
+.inlineLink {
+    font-weight: 700;
+    font-style: italic;
 }
 
 
