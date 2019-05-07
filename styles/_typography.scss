@@ -70,6 +70,7 @@ nav {
     letter-spacing: 1px;
 }
 
+
 .linkButton {
     @include mainFont (20);
     text-align: center;
@@ -96,8 +97,10 @@ nav {
     @include mainFont (26);
 }
 
-input[type=text]::placeholder, {
+input[type=text]::placeholder,
+input[type=email]::placeholder {
     @include bodyFont (20);
+    text-transform:capitalize;
 }
 
 
@@ -109,3 +112,48 @@ input[type=text]::placeholder, {
 }
 
 
+// ? Media Queries 
+
+@media (max-width:1350px) {
+    .companyName {
+        @include mainFont (95);
+
+    }
+}
+
+@media (max-width:1100px) {
+    .companyName {
+         @include mainFont (45);
+    }
+
+    .pageTitle {
+        @include mainFont (60);
+    }
+}
+
+@media (max-width:800px) {
+    body {
+        @include bodyFont (16);
+    }
+
+    .companyName {
+        text-align: right;
+    }
+
+    h2 {
+        @include mainFont (30);
+    }
+
+    input[type=text]::placeholder,
+    input[type=email]::placeholder {
+        @include bodyFont (16);
+    }
+
+}
+
+@media (max-width:500px) {
+    .pageTitle {
+        @include mainFont (35);
+        line-height: 1.4;
+    }
+}

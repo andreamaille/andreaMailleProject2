@@ -1,30 +1,23 @@
-// General
-
-.innerWrapper {
-    width: 85%;
-    margin: 0 auto;
-}
 
 // Header 
 
 .blogHeader {
-    background:url(../assets/blog-header.jpg) top center/cover no-repeat $primaryBackground;
+    background:url(../assets/blog-header.jpg) top center/contain no-repeat $primaryBackground;
     width:100%;
-    height:65vh;
+    height:100vh;
 }
 
 .mainHeaderBlog h1 {
     width: calc(60% - 25px);
     text-align: left;
     margin-top:5%;
-
+    z-index:10;
 }
 
 // Main 
 
 .mainSection {
     background-color: $primaryBackground;
-    padding:50px 0;
 }
 
 .blogContent{
@@ -32,14 +25,16 @@
         aside {
             width: calc(40% - 25px);
             margin-right:25px;
-        }
-
-        .blogSection {
-            width: calc(60% - 25px);
-            margin-left:25px;
             position: relative;
-            top:-250px;
-            margin-bottom: -250px;
+            top:-75px;
+            margin-bottom:-75px;
+        }
+        
+        .blogSection {
+            width: 60%;
+            position: relative;
+            top:-475px;
+            margin-bottom: -475px;
         }
 }
 
@@ -76,10 +71,16 @@
 
 // Section - Featured Blog
 
-.blogFeatureImage {
+.FeatureImage1 {
     background:url(../assets/blog-post-image.jpg) top center/cover no-repeat;
-    width:121.6%;
     height:550px;
+    width:116.5%;
+    margin-left:30px;
+}
+
+.featuredBlog article {
+    padding-left: 30px;
+    padding-bottom: 30px;
 }
 
 .featuredBlog h2 {
@@ -88,6 +89,11 @@
 
 .featuredBlog h2 + p {
     margin:10px 0 40px 0;
+}
+
+.featuredBlog article {
+    border:4px solid $dropShadow;
+    border-right:0;
 }
 
 // Section - Comments
@@ -116,10 +122,140 @@
 }
 
 .readerImage1 {
-    background:url(../assets/comment-1.jpg) top center/cover no-repeat;
+    background:url(../assets/comment-1.jpg) center/cover no-repeat;
 }
 
 .readerImage2 {
-    background:url(../assets/comment-2.jpg) top center/cover no-repeat;
+    background:url(../assets/comment-2.jpg) center/cover no-repeat;
 }
+
+
+// ? Media Queries 
+
+@media (max-width:1000px) {
+    .blogHeader {
+        background:url(../assets/blog-header.jpg) top center/cover no-repeat $primaryBackground;
+        width:100%;
+        height:75vh;
+    }
+
+
+    .mainHeaderBlog h1 {
+        width: 100%;
+        text-align: center;
+    }
+
+
+    .blogContent{
+        display: flex;
+        flex-direction: column-reverse;
+            aside {
+                width: 100%;
+                text-align: center;
+                margin-right:0;
+                position: static;
+                top:0;
+                margin-bottom:0;
+            }
+
+            .blogSection {
+                width: 100%;
+                position: static;
+                top:0;
+                margin-bottom:0;
+            }
+    }
+
+    .FeatureImage1 {
+        width:100%;
+        margin:30px;
+    }
+
+    .asideAboutSection {  
+        .asideImage {
+            width: 100%;
+            position: static;
+            top:0;  
+            left:0;
+        }
+
+        .aboutDescription {
+            margin:15px 0;
+        }    
+    }
+}
+
+@media (max-width:600px) {
+    .FeatureImage1 {
+        background-position: top right;
+        height:400px;
+      }
+}
+
+@media (max-width:700px) {
+    .postedComment {
+        display: flex;
+        margin:50px 0;
+            .readerComment {
+                width:calc(75% - 20px);
+                margin-left:20px;
+            }
+                p{
+                    line-height: 1.2;
+                }
+            .readerAvatar {
+                width:25%;
+            }
+    }
+
+}
+
+@media (max-width:400px) {
+    .asideAboutSection {
+        .asideImage {
+             height:250px;
+        }
+    }
+}
+
+
+// The below height queries stop blog section from overlapping with the h1
+
+// @media (max-height:715px) { 
+//     .blogContent{
+//         .blogSection {
+//             top:-425px;
+//             margin-bottom: -425px;
+//         }
+//     }
+// }
+
+// @media (max-height:658px) { 
+//     .blogContent{
+//         .blogSection {
+//             top:-375px;
+//             margin-bottom: -375px;
+//         }
+//     }
+// }
+
+// @media (max-height:606px) { 
+//     .blogContent{
+//         .blogSection {
+//             top:-325px;
+//             margin-bottom: -325px;
+//         }
+//     }
+// }
+
+// @media (max-height:560px) { 
+//     .blogContent{
+//         .blogSection {
+//             top:-100px;
+//             margin-bottom: -100px;
+//         }
+//     }
+// }
+
+
 

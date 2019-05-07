@@ -12,6 +12,7 @@ input[type=email] {
     border-bottom: 2px solid $secondary;
     background-color:transparent;
 }
+
 input[type=text] {
     margin-right:30px;
 }
@@ -46,4 +47,18 @@ input[type=submit]::placeholder,
 textarea::placeholder {
     color:black;
     opacity: 1;
+}
+
+
+// ? Media Queries
+
+
+@media (max-width:850px) {
+    input[type=text],
+    input[type=email] {
+        width: 100%;
+        margin:0;
+        margin-bottom: 10px;
+        float:none;
+    }
 }
