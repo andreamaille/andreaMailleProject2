@@ -302,6 +302,9 @@ nav {
   text-transform: uppercase;
   text-align: center; }
 
+.about {
+  text-align: center; }
+
 .asideTitle {
   font-size: 26px;
   font-size: 1.3rem;
@@ -705,16 +708,18 @@ li {
   padding: 0; }
 
 .linkButton {
-  display: inline-block;
-  background-color: #4ceea7;
+  width: 200px;
   padding: 10px;
   margin-top: 20px;
-  width: 200px;
-  -webkit-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  transition: all 0.5s ease; }
+  display: inline-block;
+  background-color: #4ceea7;
+  -webkit-transition: background-color 0.5s ease;
+  -o-transition: background-color 0.5s ease;
+  transition: background-color 0.5s ease; }
   .linkButton:hover {
     background-color: #a9f7d5; }
+  .linkButton:active, .linkButton:focus {
+    background-color: #fdfa69; }
 
 .dropShadowLeft {
   -webkit-box-shadow: -30px 30px 0px 0px #fdfa69;
@@ -724,56 +729,64 @@ li {
   -webkit-box-shadow: 30px 30px 0px 0px #fdfa69;
   box-shadow: 30px 30px 0px 0px #fdfa69; }
 
+.sectionProfile,
+.gallery {
+  padding: 70px 0; }
+
+.pageFooter {
+  width: 100%;
+  height: 30px;
+  background-color: #2c2c2c; }
+
 nav li {
   margin: 20px 50px 20px 0;
   padding: 10px 0;
   float: left; }
   nav li a {
-    -webkit-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-    transition: all 0.3s ease; }
-  nav li:hover {
-    border-bottom: 2px solid #4ceea7;
-    padding-bottom: 5px; }
+    -webkit-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease; }
+    nav li a:hover, nav li a:active, nav li a:focus {
+      border-bottom: 2px solid #4ceea7;
+      padding-bottom: 5px; }
 
 nav li:last-child {
   margin-right: 0; }
-
-.hamburgerNav span {
-  background-color: #2c2c2c;
-  width: 42px;
-  height: 4px;
-  margin: 0 0 7px;
-  border-radius: 2px 2px 2px 2px;
-  border: 1px solid #2c2c2c;
-  display: block; }
 
 .hamburgerNav {
   position: absolute;
   top: 15px;
   right: 20px;
   visibility: hidden; }
+  .hamburgerNav span {
+    width: 42px;
+    height: 4px;
+    margin: 0 0 9px;
+    background-color: #2c2c2c;
+    border: 2px solid #2c2c2c;
+    display: block; }
 
 .headerHome {
-  background: url(../assets/header-image.jpg) top/cover no-repeat #effdf3;
   width: 100%;
-  height: 100vh; }
+  height: 100vh;
+  background: url(../assets/header-image.jpg) top/cover no-repeat #effdf3; }
 
 .companyName {
-  width: 100%;
-  z-index: 20;
+  width: 90%;
+  margin: 0 auto;
   text-align: center;
   position: absolute;
   top: 75%;
   left: 1%;
-  right: 1%; }
+  right: 1%;
+  z-index: 20; }
 
 .headerBoxImage {
+  width: 40%;
+  height: 620px;
   background: url(../assets/header-box-image.jpg) top center/cover no-repeat #fafafa;
   border: 40px solid #fdfa69;
   border-right: 0;
-  width: 40%;
-  height: 620px;
   position: absolute;
   top: 28%;
   right: 0;
@@ -781,7 +794,6 @@ nav li:last-child {
 
 .about {
   background-color: #effdf3;
-  text-align: center;
   padding: 200px 0; }
   .about h2 {
     margin: 25px; }
@@ -849,33 +861,35 @@ nav li:last-child {
   -ms-flex-pack: justify;
   justify-content: space-between; }
   .capturedLinkList li {
-    width: 49%;
+    width: 48%;
     margin: 2% 0; }
 
 .linkOptions {
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex; }
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row; }
   .linkOptions:hover {
     background: #4ceea7; }
   .linkOptions .linkIcon {
-    width: 10%; }
+    width: 10%;
+    margin: 12px 0; }
+    .linkOptions .linkIcon i {
+      color: #2c2c2c;
+      width: 40px;
+      height: 40px;
+      font-size: 1.2rem;
+      text-align: center;
+      line-height: 1.4;
+      background-color: #4ceea7;
+      border: 2px solid #4ceea7;
+      border-radius: 50%;
+      display: inline-block; }
   .linkOptions .linkDescription {
     width: 90%; }
-
-.linkIcon {
-  margin: 12px 0; }
-  .linkIcon i {
-    display: inline-block;
-    border: 2px solid #4ceea7;
-    color: #2c2c2c;
-    font-size: 1.2rem;
-    line-height: 1.4;
-    text-align: center;
-    width: 40px;
-    height: 40px;
-    background-color: #4ceea7;
-    border-radius: 50%; }
 
 .BackgroundImageMap {
   width: 100%;
@@ -883,7 +897,6 @@ nav li:last-child {
   background: url(../assets/banner.jpg) center/cover no-repeat #201e21; }
 
 .sectionProfile {
-  padding: 70px 0;
   background-color: #effdf3; }
 
 .monthlyProfile {
@@ -907,9 +920,6 @@ nav li:last-child {
     .monthlyProfile .monthlyProfileInfo h2 {
       margin: 0 0 30px 0; }
 
-.gallery {
-  padding: 50px 0; }
-
 .galleryImages {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -924,15 +934,9 @@ nav li:last-child {
 
 footer {
   background-color: #2c2c2c; }
-
-footer p {
-  color: #fafafa;
-  text-align: center; }
-
-.pageFooter {
-  width: 100%;
-  height: 30px;
-  background-color: #2c2c2c; }
+  footer p {
+    color: #fafafa;
+    text-align: center; }
 
 @media (max-width: 1100px) {
   .headerHome {
