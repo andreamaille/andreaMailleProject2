@@ -1,7 +1,7 @@
 fieldset {
     border: none;
-   
 }
+
 input[type=text],
 input[type=email] {
     width: calc((100% - 30px) / 2);
@@ -24,21 +24,18 @@ input[type=email] {
 textarea {
     width:100%;
     padding:15px;
+    margin:10px 0;
     resize: none;
     border: 2px solid $secondary;
-    margin:10px 0;
     background-color:transparent;
 }
 
 input[type=submit] {
-    font-family: 'Playfair Display', serif;
-    text-transform: uppercase; 
-    border:none;
-    margin:3% 0;
-    padding:5px;   
     width:100%;
+    padding:5px;   
+    margin:3% 0;
+    border:none;
     background-color:$secondary;
-
 }
 
 input[type=text]::placeholder,

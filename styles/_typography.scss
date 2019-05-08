@@ -30,13 +30,6 @@ h2 {
     padding:0;
 }
 
-.pageTitle {
-    @include mainFont (80);
-    width:100%;
-    line-height: 92px;
-    text-align: center;
-}
-
 h2,
 h3 {
     letter-spacing: 1px;
@@ -56,16 +49,28 @@ i {
     font-size: 1rem;
 }
 
+.pageTitle,
+.linkButton,
+.about,
+.companyName,
+nav {
+    text-align: center;
+}
+
+.pageTitle {
+    @include mainFont (80);
+    width:100%;
+    line-height: 92px;
+}
+
 nav {
     @include mainFont(20);
-    text-align: center;
     line-height: 29px;
     letter-spacing: 1px;
 }
 
 .linkButton {
     @include mainFont (20);
-    text-align: center;
     line-height: 32px;
     letter-spacing: 1px;
 }
@@ -79,11 +84,6 @@ nav {
 }
 
 // Home Page
-
-.about,
-.companyName {
-    text-align: center;
-}
 
 .companyName {
     @include mainFont (138);
@@ -103,14 +103,17 @@ input[type=email]::placeholder {
     text-transform:capitalize;
 }
 
+input[type=submit] {
+    font-family: 'Playfair Display', serif;
+    text-transform: uppercase; 
+}
+
 // Contact Page
 
 .contactEmail {
     @include mainFont (26);
     letter-spacing: 1.1px;
 }
-
-
 
 
 
@@ -149,7 +152,6 @@ input[type=email]::placeholder {
     input[type=email]::placeholder {
         @include bodyFont (16);
     }
-
 }
 
 @media (max-width:500px) {

@@ -1,4 +1,3 @@
-
 // Header 
 
 .blogHeader {
@@ -8,12 +7,12 @@
 
 .mainHeaderBlog h1 {
     width: calc(60% - 25px);
-    text-align: left;
     margin-top:5%;
+    text-align: left;
     z-index:10;
 }
 
-// Main 
+// Main
 
 .mainSection {
     background-color: $primaryBackground;
@@ -24,29 +23,28 @@
         aside {
             width: calc(40% - 25px);
             margin-right:25px;
+            margin-bottom:-75px;
             position: relative;
             top:-75px;
-            margin-bottom:-75px;
         }
         
         .blogSection {
             width: 60%;
+            margin-bottom: -475px;
             position: relative;
             top:-475px;
-            margin-bottom: -475px;
         }
 }
 
-
-// ASIDE 
+// Aside - About 
 
 .asideAboutSection {
-    background-color: $white;
     padding:20px;   
+    background-color: $white;
         .asideImage {
-            background:url(../assets/sideBlogImage.jpg) center /cover no-repeat $white;
-            height:400px;
             width: 180%;
+            height:400px;
+            background:url(../assets/sideBlogImage.jpg) center /cover no-repeat $white;
             position: relative;
             top:-40px;  
             left:-80%;
@@ -71,40 +69,40 @@
 // Section - Featured Blog
 
 .FeatureImage1 {
-    background:url(../assets/blogPostImage.jpg) top center/cover no-repeat;
-    height:550px;
     width:116.3%;
+    height:550px;
     margin-left:4.5%; 
-    // 4.5% equals about 30px
+    background:url(../assets/blogPostImage.jpg) top center/cover no-repeat;
 }
 
-.featuredBlog article {
-    padding-left: 30px;
-    padding-bottom: 30px;
-}
+.featuredBlog {
+    article {
+        padding-left: 30px;
+        padding-bottom: 30px;
+        border:4px solid $dropShadow;
+        border-right:0;
+    }
 
-.featuredBlog h2 {
-    margin-top:60px;
+    h2 {
+        margin-top:60px;
+    }
 }
 
 .featuredBlog h2 + p {
     margin:10px 0 40px 0;
 }
 
-.featuredBlog article {
-    border:4px solid $dropShadow;
-    border-right:0;
-}
 
 // Section - Comments
 
 .postedComment {
-    display: flex;
     margin:50px 0;
+    display: flex;
         .readerComment {
             width:calc(85% - 30px);
             margin-left:30px;
         }
+        
         .readerAvatar {
             width:15%;
         }
@@ -134,9 +132,9 @@
 
 @media (max-width:1000px) {
     .blogHeader {
-        background:url(../assets/blogHeader.jpg) top center/cover no-repeat $primaryBackground;
         width:100%;
         height:60vh;
+        background:url(../assets/blogHeader.jpg) top center/cover no-repeat $primaryBackground;
     }
 
     .mainHeaderBlog h1 {
@@ -150,18 +148,18 @@
         flex-direction: column-reverse;
             aside {
                 width: 100%;
-                text-align: center;
                 margin-right:0;
+                margin-bottom:0;
+                text-align: center;
                 position: static;
                 top:0;
-                margin-bottom:0;
             }
 
             .blogSection {
                 width: 100%;
+                margin-bottom:0;
                 position: static;
                 top:0;
-                margin-bottom:0;
             }
     }
 
