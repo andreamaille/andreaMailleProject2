@@ -1,16 +1,4 @@
-// Header
-
-.contactHeader {
-     background:url(../assets/contact-header.jpg) top center/cover no-repeat $primaryBackground;
-     width:100%;
-     height:70vh;
-}
-
-.mainHeaderContact h1 {
-    width: calc(75% - 60px);
-    text-align: left;
-    margin-top:8%;
-}
+// General
 
 .contactMainSection {
     background-color: $primaryBackground;
@@ -27,35 +15,55 @@
             width: calc(70% - 50px);
             margin-left: 50px;
         }
+
         .additionalContactInfo {
             width: 30%;
         }
 }
 
-.formMessages {
-    background-color: $white;
-    padding:25px;
-    width:110%;
+// Header
+    
+.contactHeader {
+    background:url(../assets/contactHeader.jpg) top center/cover no-repeat $primaryBackground;
+    height:70vh;
 }
+    
+.mainHeaderContact h1 {
+    width: calc(75% - 60px);
+    text-align: left;
+    margin-top:8%;
+}
+// ^ width is set to this so that is h1 aligns with form element
+    
+
+// Form
+
+.formMessages {
+    width:110%;
+    padding:25px;
+    background-color: $white;
+}
+
+// Additional Contact Info
 
 .socialIcons ul {
     display: flex;
         li {
             margin-right:15px;
-        }
 
-        i {
-            font-size: 1.25rem;
-        }
+            i {
+                font-size: 1.25rem;
+            }
+    } 
 }
 
 .contactEmail {
     margin:10px 0;
 }
-
-
-// ? Media Queries 
-
+    
+    
+// Media Queries
+    
 @media (max-width:1200px) {
     .contactInformation {
         display: flex;
@@ -65,6 +73,7 @@
                 width: 70%;
                 margin-left:0;
             }
+            
             .additionalContactInfo {
                 width: 70%;
                 margin-top:75px;
@@ -79,9 +88,10 @@
 }
 
 @media (max-width:900px) {
+   
     .contactHeader {
-        background:url(../assets/contact-header.jpg) 25%/cover no-repeat $primaryBackground;
-        height:100vh;
+        background-position:25%;
+        height:450px;
     }
 
     .contactMainSection {
@@ -97,7 +107,7 @@
             }
             .additionalContactInfo {
                 width: 100%;
-                margin-top:75px;    
+                margin:75px 0;    
             }
     }
 
@@ -106,4 +116,11 @@
         margin:10px;
         width:100%;
     }   
+}
+
+
+@media (max-width:750px) {
+    .mainHeaderContact h1 {
+        margin-top:30%;
+    }
 }

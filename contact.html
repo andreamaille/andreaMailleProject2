@@ -12,6 +12,15 @@
 <body>
     <header class="contactHeader">
         <div class="wrapper mainHeader mainHeaderContact">
+            <!-- Hamburger Nav for Responsive -->
+            <label for="toggle">
+                <div class="hamburgerNav">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </label>
+            <input type="checkbox" id="toggle" name="toggle">
             <nav>
                 <ul class="clearfix">
                     <li><a href="index.html">Home</a></li>
@@ -20,11 +29,6 @@
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
-            <div class="hamburgerNav">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
             <h1 class="pageTitle">Get in Touch</h1>
         </div>
     </header>
@@ -34,12 +38,14 @@
             <div class="contactForm"> 
                 <form action="contact.php" method="POST" autocomplete="on" name="contact" class="formMessages dropShadowLeft">
                     <fieldset> 
+                        <legend class="visuallyHidden">Send Message to Captured</legend>
                         <label for="name" class="visuallyHidden">Name</label>
                         <input type="text" id="name" name="name" placeholder="Name" required>
                             
                         <label for="email" class="visuallyHidden">Email Address</label>
                         <input type="email" id="email" name="email" placeholder="Email Address" required>
-                            
+                        
+                        <label for="textarea" class="visuallyHidden">Comment</label>
                         <textarea name="comment" cols="30" rows="10" placeholder="Message"></textarea>
                             
                         <label for="submit" class="visuallyHidden">Post Comment</label>
@@ -87,7 +93,10 @@
         </div>
     </main>
 
-    <footer class="pageFooter">
+    <footer>
+        <div class="wrapper">
+            <p>Copyright &copy; 2018 HackerYou</p>
+        </div>
     </footer>
     
 </body>

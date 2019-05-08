@@ -49,9 +49,7 @@ textarea::placeholder {
     opacity: 1;
 }
 
-
-// ? Media Queries
-
+// Media Queries
 
 @media (max-width:850px) {
     input[type=text],
@@ -62,3 +60,4 @@ textarea::placeholder {
         float:none;
     }
 }
+

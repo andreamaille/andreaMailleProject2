@@ -2,8 +2,7 @@
 // Header 
 
 .blogHeader {
-    background:url(../assets/blog-header.jpg) top center/contain no-repeat $primaryBackground;
-    width:100%;
+    background:url(../assets/blogHeader.jpg) top center/contain no-repeat $primaryBackground;
     height:100vh;
 }
 
@@ -45,7 +44,7 @@
     background-color: $white;
     padding:20px;   
         .asideImage {
-            background:url(../assets/side-blog-image.jpg) center /cover no-repeat $white;
+            background:url(../assets/sideBlogImage.jpg) center /cover no-repeat $white;
             height:400px;
             width: 180%;
             position: relative;
@@ -72,10 +71,11 @@
 // Section - Featured Blog
 
 .FeatureImage1 {
-    background:url(../assets/blog-post-image.jpg) top center/cover no-repeat;
+    background:url(../assets/blogPostImage.jpg) top center/cover no-repeat;
     height:550px;
-    width:116.5%;
-    margin-left:30px;
+    width:116.3%;
+    margin-left:4.5%; 
+    // 4.5% equals about 30px
 }
 
 .featuredBlog article {
@@ -122,29 +122,28 @@
 }
 
 .readerImage1 {
-    background:url(../assets/comment-1.jpg) center/cover no-repeat;
+    background:url(../assets/comment1.jpg) center/cover no-repeat;
 }
 
 .readerImage2 {
-    background:url(../assets/comment-2.jpg) center/cover no-repeat;
+    background:url(../assets/comment2.jpg) center/cover no-repeat;
 }
 
 
-// ? Media Queries 
+// Media Queries 
 
 @media (max-width:1000px) {
     .blogHeader {
-        background:url(../assets/blog-header.jpg) top center/cover no-repeat $primaryBackground;
+        background:url(../assets/blogHeader.jpg) top center/cover no-repeat $primaryBackground;
         width:100%;
-        height:75vh;
+        height:60vh;
     }
-
 
     .mainHeaderBlog h1 {
         width: 100%;
+        margin: 100px auto;
         text-align: center;
     }
-
 
     .blogContent{
         display: flex;
@@ -196,18 +195,19 @@
     .postedComment {
         display: flex;
         margin:50px 0;
-            .readerComment {
-                width:calc(75% - 20px);
-                margin-left:20px;
-            }
-                p{
-                    line-height: 1.2;
-                }
             .readerAvatar {
                 width:25%;
             }
-    }
 
+            .readerComment {
+                width:calc(75% - 20px);
+                margin-left:20px;
+
+                p   {
+                line-height: 1.2;
+            }
+        }
+    }
 }
 
 @media (max-width:400px) {
@@ -218,44 +218,9 @@
     }
 }
 
-
-// The below height queries stop blog section from overlapping with the h1
-
-// @media (max-height:715px) { 
-//     .blogContent{
-//         .blogSection {
-//             top:-425px;
-//             margin-bottom: -425px;
-//         }
-//     }
-// }
-
-// @media (max-height:658px) { 
-//     .blogContent{
-//         .blogSection {
-//             top:-375px;
-//             margin-bottom: -375px;
-//         }
-//     }
-// }
-
-// @media (max-height:606px) { 
-//     .blogContent{
-//         .blogSection {
-//             top:-325px;
-//             margin-bottom: -325px;
-//         }
-//     }
-// }
-
-// @media (max-height:560px) { 
-//     .blogContent{
-//         .blogSection {
-//             top:-100px;
-//             margin-bottom: -100px;
-//         }
-//     }
-// }
-
-
-
+@media (max-height:700px) and (min-width:1400px) {
+    .blogContent .blogSection {
+            top:-300px;
+            margin-bottom: -300px;
+        }
+}

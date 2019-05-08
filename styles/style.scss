@@ -4,6 +4,7 @@
 @import "typography";
 @import "blog";
 @import "contact";
+@import "keyframes";
 
 // General Throughout Pages
 
@@ -18,6 +19,11 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-end;
+}
+
+.headerHome {
+    width:100%;
+    height:100vh;
 }
 
 img {
@@ -70,12 +76,6 @@ li{
     padding:70px 0;
 }
 
-.pageFooter {
-    width:100%;
-    height:30px;
-    background-color:$black;
-}
-    
 // Nav
 
 nav {
@@ -103,12 +103,12 @@ nav li:last-child{
 
 // Hamburger Nav for Responsive
 
+
 .hamburgerNav {
+    cursor: pointer;
     position: absolute;
     top: 15px;
     right: 20px;
-    visibility: hidden;
-
         span {
             width:42px;
             height:4px;
@@ -117,14 +117,28 @@ nav li:last-child{
             border: 2px solid $black;
             display:block;
         }
+        
+        &:hover{
+            animation: flip-diagonal-2-br 0.2s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+        }   
 }
+
+
+input[type="checkbox"] {
+    position:absolute;
+    left:-1000;
+    display:none;
+}
+
+label[for="toggle"] {
+    visibility: hidden;
+}
+
 
 // Home Page Styles
 
 .headerHome {
-    width:100%;
-    height:100vh;
-    background:url(../assets/header-image.jpg) top /cover no-repeat $primaryBackground;
+    background:url(../assets/headerImage.jpg) top /cover no-repeat $primaryBackground;
 }
 
 .companyName {
@@ -132,7 +146,7 @@ nav li:last-child{
     margin:0 auto;
     text-align: center;
     position: absolute;
-    top:75%;
+    top:78%;
     left:1%;
     right:1%;
     z-index:20;
@@ -141,7 +155,7 @@ nav li:last-child{
 .headerBoxImage {
     width:40%;
     height: 620px;
-    background:url(../assets/header-box-image.jpg) top center /cover no-repeat $white;
+    background:url(../assets/headerBoxImage.jpg) top center /cover no-repeat $white;
     border: 40px solid $dropShadow;
     border-right: 0;
     position: absolute;
@@ -195,13 +209,13 @@ nav li:last-child{
 }
 
 .articleImage1 {
-    background:url(../assets/left-image.jpg) center/cover no-repeat;
+    background:url(../assets/leftImage.jpg) center/cover no-repeat;
     top:-30px;
     left:-12.5%;
 }
 
 .articleImage2 {
-    background:url(../assets/right-image.jpg) center/cover no-repeat;
+    background:url(../assets/rightImage.jpg) center/cover no-repeat;
     bottom:-30px;
     right:-12.5%;
 }
@@ -227,8 +241,9 @@ nav li:last-child{
 .linkOptions {
     display: flex;
     flex-direction: row;
+    transition: background 0.5s ease;
         &:hover {
-            background:$secondary;
+            background:lighten($secondary, 25);
         }
     
         .linkIcon {
@@ -276,7 +291,7 @@ nav li:last-child{
         .monthlyProfileImage {
             width:25%;
             height:300px;
-            background:url(../assets/small-box.jpg) center/cover no-repeat #201e21;
+            background:url(../assets/smallBox.jpg) center/cover no-repeat #201e21;
         }
 
         .monthlyProfileInfo {
@@ -297,6 +312,7 @@ nav li:last-child{
         img {
             margin-right:25px;
         }
+
         img:last-child {
             margin-right:0;
         }
@@ -306,35 +322,32 @@ nav li:last-child{
 
 footer {
     background-color: $black;
-
         p {
            color:$white;
            text-align: center; 
         }
 }
 
-
-
 // Media Queries 
 
-
-
 @media (max-width:1100px) {
+
+    // Header
     .headerHome {
-        background:url(../assets/header-image.jpg) 25% /cover no-repeat $primaryBackground;
+        background-position: 25%;
     }
 
     .headerBoxImage {
         display: none;
     }
 
+    // Section - About 
     .about {
-        padding:75px 0;
-
+        padding:60px 0;
     }
 
+    // Section - Captured Links
     .capturedLinkList {
-        display: flex;
         flex-direction: column;
             li {
                 width: 100%;
@@ -345,15 +358,17 @@ footer {
         align-items: center;
     }
 
+    // Section - Monthly Profile
     .monthlyProfile {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+
             .monthlyProfileImage {
                 width:90%;
-                height:300px;
                 background-position:top center;
             }
+
             .monthlyProfileInfo {
                 width: 100%;
                 margin:40px 0;
@@ -366,14 +381,37 @@ footer {
 }
         
 @media (max-width:850px) {
-    nav {
-        visibility: hidden;
-    }
+    // Responsive Nav
     
-    .hamburgerNav {
+    label[for="toggle"] {
         visibility: visible;
     }
+    
+    nav {
+        padding:10px 0;
+        text-align: center;
+        position: absolute;
+        top:10%;
+        right:2%;
+        left:2%;
+        background-color:$primaryBackground;
+        opacity: 0;
+        z-index:50;
+        transition: opacity 0.2s ease;
+            li {
+                width:100%;
+                padding:10px;
+                margin:10px;
+                float:none; 
+            }
+    }
+    
+    input[type="checkbox"]:checked + nav{
+        opacity: 1;
+    }
 
+
+    // Section - Articles
     .articlePreview {
         flex-direction: column;
             .articleImage {
@@ -386,49 +424,55 @@ footer {
             }
     }
 
-    .article2{
-            .articleInfo h3 {
-                margin-top:70px;
-            }          
+    .article2 {
+        .articleInfo h3 {
+            margin-top:70px;
+        }          
 }
 
 }
 
 @media (max-width:700px) { 
-
+    // Section - About
     .about p {
         margin:0 10px;
     }
 
+    // Section - Captured Links
     .sectionLinks {
         padding:50px 0;
     }
 
     .linkOptions {
-        display: flex;
         flex-direction: column;
         justify-content: center;
         text-align: center;
         margin:10px 0;
-            .linkIcon {
-                width:100%;
-            }
+            .linkIcon,
             .linkDescription {
                 width:100%;
             }
     }
 
+    // Background Image - Map
     .BackgroundImageMap {
         height:250px;
     }
 
+    // Section - Gallery
     .gallery img:last-child {
         display:none;
     }
 }
 
 @media (max-width:500px) {
-    header {
-        height:600px;
+    .headerHome {
+        height:650px;
+    }
+}
+
+@media (max-height:700px) and (min-width:1500px) {
+    .companyName {
+        top:85%;
     }
 }
