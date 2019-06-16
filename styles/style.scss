@@ -311,6 +311,10 @@ label[for="toggle"] {
         }
 }
 
+.image-container {
+    width:100%;
+}
+
 // Footer 
 
 footer {
@@ -453,7 +457,7 @@ footer {
     }
 
     // Section - Gallery
-    .gallery img:last-child {
+    .gallery .image-container:last-child {
         display:none;
     }
 }
